@@ -4,7 +4,7 @@
 
 ## Our Commitment
 
-We don't track or use yoru data off device. Ever.
+We don't track or use your data off device. Ever.
 
 ## Summary
 
@@ -14,17 +14,23 @@ We don't track or use yoru data off device. Ever.
 
 ## What Information GLP Track Stores
 
-### On Your Device Only
+### On Your Device
 
 1. **Shot Data** 
    - Information about when, what, and how much was taken
 
 2. **Weight Data**
-   - All weight data is read from Apple Health, and is never sored in the app or off device.
+   - All weight data is read from Apple Health, and is never stored in the app or off device.
 
 3. **Medication Levels**
    - This is calculated on-device, using a half-life formula for the medications that are tracked.
    - No data is transferred off-device for any of the calculations.
+
+### Off Your Device
+
+1. **Shot Data**
+   - Your shot data is synced with iCloud, to allow useage of the app on other devices, or if
+     you are restoreing the app after reinstallation.
 
 ## What Information is Shared
 
