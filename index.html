@@ -6,8 +6,8 @@
     <title>GLP Track</title>
     <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-  
-  <style>
+    
+    <style>
         /* Custom font import for better aesthetics */
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
         
@@ -24,61 +24,72 @@
             border-radius: 0.75rem; /* rounded-xl */
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
-</style>
+    </style>
+</head>
+<body>
 
 <header class="bg-white shadow-lg sticky top-0 z-10">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between items-center h-16">
-      <!-- Page Title -->
-      <div class="flex-shrink-0">
-        <span class="text-2xl font-extrabold text-indigo-700 tracking-tight">
-          GLP Track
-        </span>
-      </div>
-      <!-- Navigation Links -->
-      <nav class="flex space-x-6">
-        <a href="https://github.com/ubenmackin/GLPTrack/issues" class="text-gray-600 hover:text-indigo-600 transition duration-150 ease-in-out font-medium">
-          Contact
-        </a>
-      </nav>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+            <!-- Page Title -->
+            <div class="flex-shrink-0">
+                <span class="text-2xl font-extrabold text-indigo-700 tracking-tight">
+                    GLP Track
+                </span>
+            </div>
+            <!-- Navigation Links -->
+            <nav class="flex space-x-6">
+                <a href="https://github.com/ubenmackin/GLPTrack/issues" class="text-gray-600 hover:text-indigo-600 transition duration-150 ease-in-out font-medium">
+                    Contact
+                </a>
+            </nav>
+        </div>
     </div>
-  </div>
 </header>
 
 <!-- Main Content Section -->
 <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-  <div class="bg-white p-8 md:p-12 rounded-2xl shadow-xl">
-    <!-- Content Grid: Text on left, Image on right (swaps to stack on mobile) -->
-    <div class="flex flex-wrap -mx-4 items-center">
-      <!-- Text Content (Left side, takes full width on small screens, half on large) -->
-      <div class="w-full lg:w-1/2 px-4 mb-8 lg:mb-0">
-        <h1 class="text-4xl font-bold text-gray-900 mb-4">
-          Welcome to the support page for the GLP Track iOS App.
-        </h1>
-        <h2 class="text-2xl font-semibold text-indigo-600 mb-6">
-          Custom GLP‑1 tracking. Simplified.
-        </h2>
-        <p class="text-lg text-gray-700 leading-relaxed">
-          Record, track, and meet your goals with <b>GLP Track</b>, the free tracking tool designed for users of GLP-1 medications like Ozempic®, Mounjaro®, Wegovy®, and Zepbound®.
-        </p>
-      </div>
-      <!-- Placeholder Image (Right side) -->
-      <div class="w-full lg:w-1/2 px-4">
-        <img src="assets/1-mod.png" height="400px" />
-      </div>
+    <div class="bg-white p-8 md:p-12 rounded-2xl shadow-xl">
+        <!-- Content Grid: Text on left, Image on right (swaps to stack on mobile) -->
+        <div class="flex flex-wrap -mx-4 items-center">
+            <!-- Text Content (Left side, takes full width on small screens, half on large) -->
+            <div class="w-full lg:w-1/2 px-4 mb-8 lg:mb-0">
+                <h1 class="text-4xl font-bold text-gray-900 mb-4">
+                    Welcome to the support page for the GLP Track iOS App.
+                </h1>
+                <h2 class="text-2xl font-semibold text-indigo-600 mb-6">
+                    Custom GLP‑1 tracking. Simplified.
+                </h2>
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    Record, track, and meet your goals with <b>GLP Track</b>, the free tracking tool designed for users of GLP-1 medications like Ozempic®, Mounjaro®, Wegovy®, and Zepbound®.
+                </p>
+            </div>
+            <!-- Placeholder Image (Right side) -->
+            <div class="w-full lg:w-1/2 px-4 flex justify-center">
+                <!-- FIX 1: Using max-h-[400px] and w-auto for responsive height limit -->
+                <img 
+                    src="assets/1-mod.png" 
+                    class="max-h-[400px] w-auto rounded-xl shadow-2xl" 
+                    alt="iPhone screenshot of GLP Track app interface" 
+                />
+            </div>
+        </div>
     </div>
-  </div>
-  <!-- Bottom Content Section -->
-  <div class="mt-16 text-center" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
-    <h3 class="text-3xl font-semibold text-gray-800 mb-8">Ready to start tracking?</h3>
-    <a hred="https://apps.apple.com/us/app/glp-track/id6748245399">
-        <img src="assets/appstore-logo.svg" width="200px"/>
-    </a>
-</div>
+    
+    <!-- Bottom Content Section -->
+    <!-- FIX 2: Removed text-center, added flex, justify-center, items-center, and space-x-6 for horizontal layout -->
+    <div class="mt-16 flex flex-col sm:flex-row justify-center items-center space-x-0 sm:space-x-6 space-y-4 sm:space-y-0 p-4 bg-white rounded-xl shadow-lg">
+        <h3 class="text-3xl font-semibold text-gray-800">Ready to start tracking?</h3>
+        <!-- Corrected typo hred to href and added alt text -->
+        <a href="https://apps.apple.com/us/app/glp-track/id6748245399">
+            <img src="assets/appstore-logo.svg" width="200px" alt="Download on the App Store"/>
+        </a>
+    </div>
+
 </main>
 <!-- Simple Footer for spacing/completeness -->
 <footer class="mt-12 py-4 text-center text-sm text-gray-500 border-t border-gray-200">
-  &copy; 2025 GLP Track. All rights reserved.
+    &copy; 2025 GLP Track. All rights reserved.
 </footer>
 
 </body>
