@@ -15,50 +15,25 @@
             font-family: 'Inter', sans-serif;
             background-color: #f7fafc; /* Light gray background */
         }
-        /* Utility class for smoother image loading/display */
-        .placeholder-img {
-            display: block;
-            width: 100%;
+
+        /* --- Custom Styles for Staggered Image Layout --- */
+        /* Base class for fixed size and relative positioning */
+        .staggered-image {
+            width: 185px; /* Fixed width as requested by user (185px) */
+            max-height: 400px;
             height: auto;
-            max-width: 100%;
-            border-radius: 0.75rem; /* rounded-xl */
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
-
-        /* --- Custom Styles for Fanned Image Stack --- */
-        .fanned-stack {
             position: relative;
-            /* Container size adjusted to hold the 400px tall images plus rotation clearance */
-            width: 320px; 
-            height: 450px;
-            margin: 0 auto;
         }
 
-        .stacked-image {
-            position: absolute;
-            max-height: 400px; /* Enforces maximum height */
-            width: auto;
-            /* Center the image within the stack container */
-            top: 50%;
-            left: 50%;
-            /* Base transform to perfectly center the image */
-            transform: translate(-50%, -50%); 
+        /* Individual vertical offsets for staggering effect */
+        .stagger-offset-1 {
+            top: 0px; /* Image 1: Highest */
         }
-
-        /* Individual rotations and z-index for the fanning effect */
-        .fan-3 { /* Backmost image (right tilt) */
-            z-index: 10;
-            transform: translate(-50%, -50%) rotate(10deg);
-            opacity: 0.85; /* Slightly faded for depth */
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        .stagger-offset-2 {
+            top: 30px; /* Image 2: Offset down */
         }
-        .fan-2 { /* Middle image (no tilt) */
-            z-index: 20;
-            transform: translate(-50%, -50%) rotate(0deg);
-        }
-        .fan-1 { /* Frontmost image (left tilt) */
-            z-index: 30;
-            transform: translate(-50%, -50%) rotate(-10deg);
+        .stagger-offset-3 {
+            top: 60px; /* Image 3: Lowest */
         }
     </style>
 </head>
@@ -101,34 +76,34 @@
                 </p>
             </div>
             
-            <!-- Fanned Image Stack (Right side) -->
+            <!-- Staggered Image Layout (Right side) -->
             <div class="w-full sm:w-1/2 px-4 flex justify-center">
-                <div class="fanned-stack"> 
-                    <!-- Image 3: Backmost (Lowest Z-index, most rotated right) -->
-                    <img 
-                        src="assets/3-mod.png" 
-                        class="stacked-image fan-3 rounded-xl shadow-2xl" 
-                        alt="GLP Track App Screen 3" 
-                    />
-                    <!-- Image 2: Middle (Straight) -->
-                    <img 
-                        src="assets/2-mod.png" 
-                        class="stacked-image fan-2 rounded-xl shadow-2xl" 
-                        alt="GLP Track App Screen 2" 
-                    />
-                    <!-- Image 1: Frontmost (Highest Z-index, most rotated left) -->
+                <!-- Container set to 580px width to hold three 185px images with space-x-6 (555px total image width) -->
+                <div class="flex items-start justify-center space-x-6 w-[580px] h-[460px]"> 
+                    <!-- Image 1: Highest (Leftmost) -->
                     <img 
                         src="assets/1-mod.png" 
-                        class="stacked-image fan-1 rounded-xl shadow-2xl" 
+                        class="staggered-image stagger-offset-1 rounded-xl shadow-2xl" 
                         alt="GLP Track App Screen 1" 
+                    />
+                    <!-- Image 2: Middle offset -->
+                    <img 
+                        src="assets/2-mod.png" 
+                        class="staggered-image stagger-offset-2 rounded-xl shadow-2xl" 
+                        alt="GLP Track App Screen 2" 
+                    />
+                    <!-- Image 3: Lowest (Rightmost) -->
+                    <img 
+                        src="assets/3-mod.png" 
+                        class="staggered-image stagger-offset-3 rounded-xl shadow-2xl" 
+                        alt="GLP Track App Screen 3" 
                     />
                 </div>
             </div>
         </div>
     </div>
     
-    <!-- Bottom Content Section -->
-    <!-- Removed p-4, bg-white, rounded-xl, and shadow-lg -->
+    <!-- Bottom Content Section (App Store Link) -->
     <div class="mt-16 flex flex-col sm:flex-row justify-center items-center space-x-0 sm:space-x-6 space-y-4 sm:space-y-0">
         <h3 class="text-3xl font-semibold text-gray-800">Ready to start tracking?</h3>
         <a href="https://apps.apple.com/us/app/glp-track/id6748245399">
